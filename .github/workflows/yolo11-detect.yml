@@ -29,7 +29,7 @@ jobs:
 
     - name: Run build script
       run: |
-        apt-get update && apt install -y --no-install-recommends wget
+        apt-get update && apt install -y --no-install-recommends wget cmake build-essential
         pip install onnxsim
         cd yolo
         mkdir -pv onnx
