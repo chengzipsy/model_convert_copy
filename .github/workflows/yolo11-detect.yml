@@ -1,7 +1,5 @@
 name: Convert Yolo11 Detect Models
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 # 触发工作流的事件
 on:
   workflow_dispatch:
@@ -24,7 +22,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 1000
         fetch-tags: true
@@ -58,7 +56,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 1000
         fetch-tags: true
