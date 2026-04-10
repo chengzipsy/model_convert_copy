@@ -29,6 +29,11 @@ jobs:
 
     - name: Run build script
       run: |
+        sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources || true
+        sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources || true
+        sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list || true
+        sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list || true
+        
         apt-get update && apt install -y --no-install-recommends wget cmake build-essential
         pip install onnxsim
         cd yolo
